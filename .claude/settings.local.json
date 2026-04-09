@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PYTHONIOENCODING=utf-8 python main.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c \":*)",
+      "Bash(wc -l /c/Users/zgc/Desktop/Job_Search_Agent/output/*.json /c/Users/zgc/Desktop/Job_Search_Agent/output/*.csv)",
+      "Bash(python fast_collect.py)",
+      "Bash(pip install:*)",
+      "Bash(playwright install:*)",
+      "Bash(sleep 900 && grep \"total:\" \"C:\\\\Users\\\\zgc\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-zgc-Desktop-DifPlanf-Job-Search-Agent-opus\\\\7c6961fb-02cc-4719-a828-678253ba56d8\\\\tasks\\\\boagu881m.output\" 2>/dev/null | tail -5; echo \"---\"; grep -c \"\\\\[STRATEGY\\\\]\" \"C:\\\\Users\\\\zgc\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-zgc-Desktop-DifPlanf-Job-Search-Agent-opus\\\\7c6961fb-02cc-4719-a828-678253ba56d8\\\\tasks\\\\boagu881m.output\" 2>/dev/null; echo \"strategies\"; grep -c \"\\\\[EXECUTE\\\\]\" \"C:\\\\Users\\\\zgc\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-zgc-Desktop-DifPlanf-Job-Search-Agent-opus\\\\7c6961fb-02cc-4719-a828-678253ba56d8\\\\tasks\\\\boagu881m.output\" 2>/dev/null; echo \"executions\"; grep \"TARGET REACHED\\\\|MAX ITERATIONS\" \"C:\\\\Users\\\\zgc\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-zgc-Desktop-DifPlanf-Job-Search-Agent-opus\\\\7c6961fb-02cc-4719-a828-678253ba56d8\\\\tasks\\\\boagu881m.output\" 2>/dev/null)",
+      "Bash(cd \"C:/Users/zgc/Desktop/DifPlanf/Job_Search_Agent_opus\" && python main.py 2>&1 | tee run_output.log)",
+      "Bash(cd \"C:/Users/zgc/Desktop/DifPlanf/Job_Search_Agent_opus\" && python -u main.py 2>&1)",
+      "Bash(cd \"C:/Users/zgc/Desktop/DifPlanf/Job_Search_Agent_opus\" && python -c \"\nimport subprocess, sys\nresult = subprocess.run\\(\n    [sys.executable, 'main.py'],\n    capture_output=True, text=True, encoding='utf-8', errors='replace',\n    timeout=580\n\\)\nwith open\\('run_output.log', 'w', encoding='utf-8'\\) as f:\n    f.write\\(result.stdout\\)\n    if result.stderr:\n        f.write\\('\\\\n--- STDERR ---\\\\n'\\)\n        f.write\\(result.stderr\\)\nprint\\(f'EXIT: {result.returncode}'\\)\nprint\\(f'STDOUT LEN: {len\\(result.stdout\\)}'\\)\n\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('agent/graph.py'\\).read\\(\\)\\); print\\('graph.py OK'\\)\" && python -c \"import ast; ast.parse\\(open\\('tools/web_search.py'\\).read\\(\\)\\); print\\('web_search.py OK'\\)\" && python -c \"import ast; ast.parse\\(open\\('tools/page_fetcher.py'\\).read\\(\\)\\); print\\('page_fetcher.py OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('agent/graph.py', encoding='utf-8'\\).read\\(\\)\\); print\\('graph.py OK'\\)\" && python -c \"import ast; ast.parse\\(open\\('tools/web_search.py', encoding='utf-8'\\).read\\(\\)\\); print\\('web_search.py OK'\\)\" && python -c \"import ast; ast.parse\\(open\\('tools/page_fetcher.py', encoding='utf-8'\\).read\\(\\)\\); print\\('page_fetcher.py OK'\\)\")",
+      "Bash(python main.py)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('tools/web_search.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\" && python -c \"import ast; ast.parse\\(open\\('agent/graph.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('tools/page_fetcher.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python -c \"\nimport requests, re, sys, io, time\nsys.stdout = io.TextIOWrapper\\(sys.stdout.buffer, encoding='utf-8', errors='replace'\\)\n\nheaders = {\n    'User-Agent': 'Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/122.0.0.0 Safari/537.36',\n    'Referer': 'https://www.shixiseng.com/',\n}\n\nall_urls = set\\(\\)\nkeywords = ['AI算法', '机器学习', '深度学习', '大模型', 'NLP', '算法工程师', '推荐算法', '计算机视觉', 'LLM', '自然语言处理']\nfor kw in keywords:\n    for page in [1, 2]:\n        try:\n            resp = requests.get\\(f'https://www.shixiseng.com/interns?keyword={kw}&page={page}', headers=headers, timeout=10\\)\n            urls = re.findall\\(r'\\(/intern/inn_[a-z0-9]+\\)', resp.text\\)\n            for u in urls:\n                all_urls.add\\('https://www.shixiseng.com' + u\\)\n            time.sleep\\(0.5\\)\n        except Exception as e:\n            print\\(f'Error: {kw} page {page}: {e}'\\)\n\nprint\\(f'Total unique intern URLs: {len\\(all_urls\\)}'\\)\n\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('agent/graph.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\" && python -c \"import ast; ast.parse\\(open\\('tools/direct_crawl.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('agent/graph.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(git -C /Users/claudecode status)",
+      "Bash(find . -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null; rm -f partial_run.log run_output.log output/boss_debug.png)"
+    ]
+  }
+}
